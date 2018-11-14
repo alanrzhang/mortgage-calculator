@@ -2,7 +2,7 @@
   "name": "mortgage-calculator",
   "version": "",
   "description": "",
-  "author": "Mona Bocharova",
+  "author": "Alan Zhang",
   "license": "",
   "engines": {
     "node": ">=6.13.0"
@@ -28,12 +28,14 @@
     }
   },
   "dependencies": {
+    "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
     "express": "^4.16.4",
+    "faker": "^4.1.0",
     "mysql": "^2.16.0",
     "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "faker": "^4.1.0"
+    "react-dom": "^16.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
