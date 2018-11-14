@@ -9,15 +9,16 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-// app.use(express.static('public/dist'));
+app.use(express.static('public/dist'));
 
 app.listen(port, () => {
   console.log(`listening at ${port}`);
 });
 
-app.get('/api/homes/:id/prices', (req, res) => {
+app.get('/mortgage/home/:id/', (req, res) => {
+  console.log('get hit')
   const { id } = req.params;
-  db.getHomeInfo(id)
+  db.getHouseInfo(id)
     .then((data) => {
       res.json(data);
     })
@@ -26,7 +27,7 @@ app.get('/api/homes/:id/prices', (req, res) => {
     });
 });
 
-app.post('/api/homes/prices', (req, res) => {
+app.post('/mortgage/homes', (req, res) => {
   db.postHouseInfo(req.body)
     .then(() => {
       res.send(201);
@@ -36,7 +37,7 @@ app.post('/api/homes/prices', (req, res) => {
     });
 });
 
-app.put('/api/homes/prices', (req, res) => {
+app.put('/mortgage/homes', (req, res) => {
   db.updateHouseInfo(req.body)
     .then((data) => {
       res.json(data);
@@ -46,11 +47,13 @@ app.put('/api/homes/prices', (req, res) => {
     });
 });
 
-app.delete('api/homes/:id/prices', (req, res) => {
-  const { id } = req.params;
+app.delete('mortgage/homes', (req, res) => {
+  const { id } = req.body;
   db.deleteHouseInfo(id)
     .then(() => {
       res.send(202);
     })
-    .catch('error deleting data');
+    .catch(() => {
+      console.log('error deleting data');
+    });
 });

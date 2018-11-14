@@ -8,6 +8,12 @@ const connection = mysql.createConnection({
   database: process.env.DB_NAME,
 });
 
-connection.connect();
+connection.connect((err) => {
+  if (err) {
+    console.log('error connecting to db');
+  } else {
+    console.log('db successfully connected');
+  }
+});
 
 module.exports = connection;
