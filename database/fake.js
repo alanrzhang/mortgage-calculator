@@ -10,9 +10,8 @@ while (streetNames.size < 1000) {
   streetNames.add(faker.address.streetName());
 }
 const streetArray = Array.from(streetNames);
-fs.writeFileSync('./database/data.csv', `"id", "address", "home_price", "property_tax, "home_insurance", "hoa_dues"`);
 const seedData = function (streets) {
-  const startTime = moment().valueOf() * 1000;
+  const startTime = moment().valueOf() / 1000;
   streets.forEach((val, index) => {
     console.log(`generating data for street name: ${index + 1}`);
     const data = [];
@@ -30,7 +29,7 @@ const seedData = function (streets) {
     const csv = json2csv(data, { header: false });
     fs.appendFileSync('./database/data.csv', '\n' + csv);
   });
-  const endTime = moment().valueOf() * 1000;
+  const endTime = moment().valueOf() / 1000;
   console.log(`Data generation took ${endTime - startTime} seconds`);
 };
 
