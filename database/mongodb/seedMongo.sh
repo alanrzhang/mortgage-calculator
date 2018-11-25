@@ -1,2 +1,2 @@
 #!/bin/bash
-mongoimport -d db_name -c coll_name --type csv --file ../data.csv --headerline
+mongoimport -d zillower -c mortgage --type csv --file ../data.csv --headerline

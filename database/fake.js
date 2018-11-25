@@ -15,7 +15,7 @@ while (streetNames.size < 1000) {
 const streetArray = Array.from(streetNames);
 
 const seedData = function (streets) {
-  fs.writeFileSync('./database/data.csv', 'id,address,home_price,property_tax,home_insurance,hoa_dues');
+  fs.writeFileSync('./database/data.csv','id,address,home_price,property_tax,home_insurance,hoa_dues');
   const startTime = moment().valueOf() / 1000;
   streets.forEach((val, index) => {
     console.log(`generating data for street name: ${index + 1}`);

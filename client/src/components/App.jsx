@@ -41,7 +41,7 @@ class App extends React.Component {
         'Accept': 'application/json',
       },
     })
-      // .then(res => res.json())
+      .then(res => res.json())
       .then((res) => {
         res[0].down_payment_percentage = 20;
         res[0].property_tax_percentage = ((res[0].property_tax / res[0].home_price) * 100).toFixed(2);

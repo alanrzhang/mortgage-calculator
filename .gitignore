@@ -3,3 +3,4 @@ public/dist/bundle.js
 .env
 *.pem
 *.csv
+/database/mongodb/test.js

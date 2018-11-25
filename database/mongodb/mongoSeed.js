@@ -1,14 +1,16 @@
-const mongoose = require('mongoose');
+// this file is never used. everything is done in seedMongo.sh
 
-const Schema = mongoose.Schema;
+// const mongoose = require('mongoose');
 
-const mortgageSchema = new Schema({
-  id: { type: Number, unique: true },
-  address: String,
-  home_price: Number,
-  property_tax: Number,
-  home_insurance: Number,
-  hoa_dues: Number,
-});
+// const { Schema } = mongoose.Schema;
 
-const mortgage = mongoose.model('Mortgage', mortgageSchema);
+// const mortgageSchema = new Schema({
+//   id: { type: Number, unique: true },
+//   address: String,
+//   home_price: Number,
+//   property_tax: Number,
+//   home_insurance: Number,
+//   hoa_dues: Number,
+// });
+
+// const mortgage = mongoose.model('Mortgage', mortgageSchema);

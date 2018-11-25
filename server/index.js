@@ -16,7 +16,7 @@ app.listen(port, () => {
 });
 
 app.get('/mortgage/home/:id/', (req, res) => {
-  console.log('get hit')
+  console.log('get hit');
   const { id } = req.params;
   db.getHouseInfo(id)
     .then((data) => {
@@ -39,8 +39,8 @@ app.post('/mortgage/homes', (req, res) => {
 
 app.put('/mortgage/homes', (req, res) => {
   db.updateHouseInfo(req.body)
-    .then((data) => {
-      res.json(data);
+    .then(() => {
+      res.send(200);
     })
     .catch(() => {
       console.log('error update housing prices');
