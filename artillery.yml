@@ -1,0 +1,11 @@
+config:
+  target: "http://127.0.0.1:3000/"
+  phases:
+    - duration: 1
+      arrivalRate: 5000
+scenarios:
+  - flow:
+    - get:
+        url: "/mortgage/homes/333"
+    - get:
+        url: "/mortgage/addresses/3334%20Cleve%20Rapid"

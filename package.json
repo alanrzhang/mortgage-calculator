@@ -14,7 +14,9 @@
     "init_postgres": "psql < database/postgres/postgresSchema.sql",
     "seed_postgres": "psql < database/postgres/postgresSeed.sql",
     "fake": "node database/fake.js",
-    "test": "./node_modules/.bin/jest"
+    "test": "./node_modules/.bin/jest",
+    "seed_mongo": "./database/mongodb/seedMongo.sh",
+    "index_mongo": "mongo < ./database/mongodb/mongoIndex.js"
   },
   "jest": {
     "setupFiles": [
@@ -45,6 +47,7 @@
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "artillery": "^1.6.0-25",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
@@ -61,6 +64,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "jest-css-modules-transform": "^2.1.1",
+    "newrelic": "^4.11.0",
     "regenerator-runtime": "^0.12.1",
     "style-loader": "^0.23.1",
     "webpack": "^4.23.0",

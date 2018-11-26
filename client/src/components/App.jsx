@@ -35,7 +35,7 @@ class App extends React.Component {
 
   componentDidMount() {
     const id = 1;
-    fetch(`/mortgage/home/${id}`, {
+    fetch(`/mortgage/homes/${id}`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',

@@ -35,6 +35,11 @@ const getHouseInfo = function (id) {
   return query.exec();
 };
 
+const getHouseInfoAddress = function (address) {
+  const query = db.find({ address });
+  return query.exec();
+};
+
 const postHouseInfo = function (data) {
   const entry = new db(data);
   return entry.save();
@@ -55,4 +60,5 @@ module.exports = {
   postHouseInfo,
   updateHouseInfo,
   deleteHouseInfo,
+  getHouseInfoAddress,
 };

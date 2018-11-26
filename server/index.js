@@ -1,3 +1,5 @@
+require('newrelic');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 require('dotenv').config();
@@ -15,8 +17,19 @@ app.listen(port, () => {
   console.log(`listening at ${port}`);
 });
 
-app.get('/mortgage/home/:id/', (req, res) => {
-  console.log('get hit');
+app.get('/mortgage/addresses/:address', (req, res) => {
+  const { address } = req.params;
+  address.replace('/%20/g', ' ');
+  db.getHouseInfoAddress(address)
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+app.get('/mortgage/homes/:id/', (req, res) => {
   const { id } = req.params;
   db.getHouseInfo(id)
     .then((data) => {
