@@ -19,7 +19,7 @@ app.listen(port, () => {
 
 app.get('/mortgage/addresses/:address', (req, res) => {
   const { address } = req.params;
-  address.replace('/%20/g', ' ');
+  address.replace('/-/g', ' ');
   db.getHouseInfoAddress(address)
     .then((data) => {
       res.json(data);

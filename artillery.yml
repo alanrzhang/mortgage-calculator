@@ -8,4 +8,4 @@ scenarios:
     - get:
         url: "/mortgage/homes/333"
     - get:
-        url: "/mortgage/addresses/3334%20Cleve%20Rapid"
+        url: "/mortgage/addresses/3334-Cleve-Rapid"
